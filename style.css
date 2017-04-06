@@ -1,0 +1,206 @@
+body {
+    margin: 0;
+}
+
+.main-container {
+    border-top: 10px solid #414141;
+}
+
+header {
+    margin: 30px auto;
+}
+
+header > button {
+    margin-left: 25px;
+}
+
+.apply_your_filter {
+    font-size: 13px;
+    font-family: "Verdana";
+    color: rgb( 51, 51, 51);
+    line-height: 2.049;
+    text-align: center;
+}
+
+.selected-button {
+    border-radius: 5px;
+    background-color: rgb( 65, 65, 65);
+    width: 174px;
+    height: 32px;
+}
+
+.selected-button > span {
+    font-size: 13px;
+    font-family: "Verdana";
+    color: rgb( 255, 255, 255);
+    font-weight: bold;
+    line-height: 2.049;
+    text-align: center;
+    width: 68px;
+    height: 10px;
+}
+
+button {
+    border-radius: 5px;
+    background-color: rgb( 241, 241, 241);
+    width: 174px;
+    height: 32px;
+    z-index: 22;
+    border: 0;
+}
+
+button:focus {
+    outline: 0;
+}
+
+button > span {
+    font-size: 13px;
+    font-family: "Verdana";
+    color: rgb( 0, 0, 0);
+    line-height: 2.049;
+    text-align: center;
+    width: 29px;
+    height: 9px;
+}
+
+#slide1_container {
+    width: 450px;
+    height: 500px;
+    overflow: visible;
+    /* So the sliding bit doesn't stick out. */
+    margin: 0 auto;
+}
+
+#slide1_images {
+    /* This is the bit that moves. It has 5 images, so 5 * 550 = 2500. You could use javascript
+to work this out instead by counting images. */
+    width: 2600px;
+    background-color: red;
+    -webkit-transition: all 1.0s ease-in-out;
+    -moz-transition: all 1.0s ease-in-out;
+    -o-transition: all 1.0s ease-in-out;
+    transition: all 1.0s ease-in-out;
+}
+
+#slide1_images img {
+    padding: 0;
+    margin-left: 5px;
+    float: left;
+    /* All the images are in a row next to each other. */
+}
+
+img {
+    width: 500px;
+    height: 500px;
+}
+
+.dot.selected {
+    font-weight: bold;
+    background-color: red;
+    height: 14px;
+    width: 14px;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 13px;
+    width: 13px;
+    margin: 0 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.focus,
+.dot:hover {
+    background-color: #717171;
+}
+
+p#slide1_controls {
+    text-align: center;
+}
+
+p {
+    margin-top: 10px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
